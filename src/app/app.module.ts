@@ -10,8 +10,11 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { CardControllerProvider } from '../providers/card-controller/card-controller';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 import { WebContentControllerProvider } from '../providers/web-content-controller/web-content-controller';
+import { CardControllerProvider } from '../providers/card-controller/card-controller';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,9 @@ import { WebContentControllerProvider } from '../providers/web-content-controlle
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    FormsModule,
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -37,8 +42,8 @@ import { WebContentControllerProvider } from '../providers/web-content-controlle
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    CardControllerProvider,
-    WebContentControllerProvider
+    WebContentControllerProvider,
+    CardControllerProvider
   ]
 })
 export class AppModule {}

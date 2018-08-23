@@ -4,14 +4,52 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content>
+  <!--
+  <ion-grid>
+    <ion-row align-items-start>
+
+      <ion-col hidden>
+        <ion-card>
+          <ion-card-header>
+            <ion-input type="text" placeholder="Category"></ion-input>
+          </ion-card-header>
+
+          <ion-card-content>
+            <ion-card hidden>
+              <ion-card-header>
+                <ion-input type="text" placeholder="Title"></ion-input>
+              </ion-card-header>
+              <ion-card-content>
+                <ion-input type="text" placeholder="Description"></ion-input>
+              </ion-card-content>
+            </ion-card>
+
+          </ion-card-content>
+
+          <button ion-button outline icon-start>
+            <ion-icon name="add"></ion-icon>
+            Add another card
+          </button>
+          
+          <button ion-button hidden>
+            Add card
+          </button>
+
+          <button ion-button clear hidden>
+            <ion-icon name="close"></ion-icon>
+          </button>
+        </ion-card>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+  -->
+
+  <ion-list>
+    <ion-list-header>Cards</ion-list-header>
+    <ion-item-group reorder="true" (ionItemReorder)="reorderItems($event)">
+      <ion-item *ngFor="let item of items">{{ item }}</ion-item>
+    </ion-item-group>
+  </ion-list>
 </ion-content>
